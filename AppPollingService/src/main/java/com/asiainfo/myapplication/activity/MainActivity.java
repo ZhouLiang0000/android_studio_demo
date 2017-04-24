@@ -10,8 +10,9 @@ import com.asiainfo.myapplication.service.PollingService;
 import com.asiainfo.myapplication.utils.PollingUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+    /*启动*/
     private Button bt_start = null;
+    /*停止*/
     private Button bt_stop = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
