@@ -26,19 +26,13 @@ public class PollingUtils {
 
         //触发服务的起始时间
         long triggerAtTime = SystemClock.elapsedRealtime();
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            //参数2是开始时间、参数3是允许系统延迟的时间
-//            manager.setWindow(AlarmManager.RTC, triggerAtTime, seconds * 1000, pendingIntent);
-//        } else {
-//            manager.setRepeating(AlarmManager.RTC, triggerAtTime, seconds * 1000, pendingIntent);
-//        }
         //使用AlarmManger的setRepeating方法设置定期执行的时间间隔（seconds秒）和需要执行的Service
         manager.setRepeating(AlarmManager.ELAPSED_REALTIME, triggerAtTime,
                 seconds * 1000, pendingIntent);
     }
+
     //停止轮询服务
-    public static void stopPollingService(Context context, Class<?> cls,String action) {
+    public static void stopPollingService(Context context, Class<?> cls, String action) {
         AlarmManager manager = (AlarmManager) context
                 .getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, cls);

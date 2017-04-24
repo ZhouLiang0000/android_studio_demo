@@ -21,9 +21,6 @@ public class PollingService extends Service {
     private NotificationManager mManager;
     /* Notification构造器 */
     private NotificationCompat.Builder mBuilder;
-    /* Notification的ID */
-    private int notifyId = 1000;
-
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -44,8 +41,8 @@ public class PollingService extends Service {
     private void initNotifiManager() {
         mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mBuilder = new NotificationCompat.Builder(this);
-        mBuilder.setContentTitle("定时Title"+String.valueOf(count))
-                .setContentText("定时Context"+String.valueOf(count))
+        mBuilder.setContentTitle("")
+                .setContentText("")
                 .setContentIntent(getDefalutIntent(Notification.FLAG_AUTO_CANCEL))
 //              .setNumber(number)//显示数量
                 .setTicker("")//通知首次出现在通知栏，带上升动画效果的
@@ -59,12 +56,16 @@ public class PollingService extends Service {
 
     //弹出Notification
     private void showNotification() {
-        Log.i("PollingServicec","---------------------"+notifyId);
+        Log.i("PollingServicec","---------------------"+count);
         //Navigator to the new activity when click the notification title
         Intent i = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
-        mBuilder.setContentIntent(pendingIntent);
-        mManager.notify(notifyId, mBuilder.build());
+        mBuilder.setContentIntent(pendingIntent)
+                .setAutoCancel(true)// 点击后让通知将消失
+                .setContentTitle("title"+String.valueOf(count))
+                .setContentText("text"+String.valueOf(count))
+                .setWhen(System.currentTimeMillis());
+        mManager.notify(count, mBuilder.build());
     }
 
     /**
@@ -79,12 +80,10 @@ public class PollingService extends Service {
     class PollingThread extends Thread {
         @Override
         public void run() {
-            System.out.println("Polling...");
             count++;
             //当计数能被5整除时弹出通知
             if (count % 5 == 0) {
                 showNotification();
-                System.out.println("New message!");
             }
         }
     }
