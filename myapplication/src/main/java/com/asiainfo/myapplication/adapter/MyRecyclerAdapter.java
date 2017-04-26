@@ -12,6 +12,7 @@ import com.asiainfo.myapplication.R;
 import com.asiainfo.myapplication.domain.Data;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                 .showImageOnFail(R.mipmap.ic_launcher)// 设置图片加载/解码过程中错误时候显示的图片
                 .cacheInMemory(true)// 是否緩存都內存中
                 .cacheOnDisc(true)// 是否緩存到sd卡上
+                .displayer(new RoundedBitmapDisplayer(50))
                 .build();
     }
 

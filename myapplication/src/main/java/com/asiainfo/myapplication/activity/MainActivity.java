@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         for (int x = 0; x < 100; x++) {
             Data data = new Data();
             data.setTv_name("我是条目--" + x);
-            data.setIv_url("https://lh4.googleusercontent.com/-K2FMuOozxU0/T3R4lRAiBTI/AAAAAAAAAE8/a3Eh9JvnnzI/s1024/sample_image_02.jpg");
+            data.setIv_url("https://kara-image.asiainfo.com/scale/personheadicon/18DF979E8F5E463997658F9EEE1D7FE3.png");
             if(x % 5 == 0){
                 data.setLayout_type(0);
             }else{
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        GridLayoutManager layoutManager = new GridLayoutManager(this,4);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        GridLayoutManager layoutManager = new GridLayoutManager(this,4);
 //        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         //设置布局管理器
         recyclerView.setLayoutManager(layoutManager);
