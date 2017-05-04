@@ -1,14 +1,10 @@
 package com.asiainfo.myapplication.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
 
 import com.asiainfo.myapplication.R;
@@ -18,8 +14,6 @@ import com.asiainfo.myapplication.view.DividerGridItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.R.attr.x;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView = null;
