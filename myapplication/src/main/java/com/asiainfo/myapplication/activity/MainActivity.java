@@ -1,5 +1,6 @@
 package com.asiainfo.myapplication.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -64,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
         recycleAdapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position) {
-                Toast.makeText(MainActivity.this,"点击了条目"+position,Toast.LENGTH_SHORT).show();
+                if(position == 1){
+                    startActivity(new Intent(MainActivity.this,ActivityButtonActivity.class));
+                }else{
+                    Toast.makeText(MainActivity.this,"点击了条目"+position,Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
