@@ -133,4 +133,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             StatusBarUtil.setTranslucentForImageView(MainActivity.this, 255, title);
         }
     }
+
 }
