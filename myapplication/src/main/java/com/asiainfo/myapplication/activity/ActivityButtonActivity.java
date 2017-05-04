@@ -26,7 +26,6 @@ public class ActivityButtonActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
         ButterKnife.inject(this);
-
     }
 
     @OnClick({R.id.bt1, R.id.bt2, R.id.bt3})
