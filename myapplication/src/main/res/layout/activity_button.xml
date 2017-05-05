@@ -23,4 +23,10 @@
         android:layout_height="50dp"
         android:layout_above="@+id/bt1"
         android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/bt2"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
