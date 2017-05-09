@@ -26,7 +26,7 @@ public class SecondActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.bt_anniu){
-            Toast.makeText(SecondActivity.this, "点击了按钮button", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SecondActivity.this, "点击了按钮new_button", Toast.LENGTH_SHORT).show();
         }
     }
 
