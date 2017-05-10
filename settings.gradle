@@ -1,1 +1,1 @@
-include ':app', ':demo1', ':AppPollingService', ':myapplication', ':commutils'
+include ':app', ':demo1', ':AppPollingService', ':myapplication', ':commutils', ':mvpdemo'
