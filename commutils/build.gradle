@@ -29,6 +29,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
+def ATRIFACTID = 'commutils-lib'
+def VERSION = '3.0.0'
 uploadArchives {
     configuration = configurations.archives
     repositories {
@@ -40,8 +42,8 @@ uploadArchives {
                 authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
             }
             pom.project {
-                version '2.0.0'
-                artifactId 'commutils-lib'
+                version VERSION
+                artifactId ATRIFACTID
                 groupId GROUP_ID
                 packaging TYPE
                 description DESCRIPTION
