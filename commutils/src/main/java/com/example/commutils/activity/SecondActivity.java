@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.chenenyu.router.Router;
 import com.chenenyu.router.annotation.Route;
@@ -28,10 +27,10 @@ public class SecondActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.bt_anniu){
-//            Router.build("first").go(this);
-            Bundle b = new Bundle();
-            b.putString("tag1","this is frome SecondActivity");
-            Router.build("first").with("tag",b).go(this);
+            Router.build("first").go(this);
+//            Bundle b = new Bundle();
+//            b.putString("tag1","this is frome SecondActivity");
+//            Router.build("first").with("tag",b).go(this);
 //            Toast.makeText(SecondActivity.this, "点击了按钮new_button", Toast.LENGTH_SHORT).show();
         }
     }

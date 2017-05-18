@@ -31,7 +31,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 def ATRIFACTID = 'commutils-lib'
-def VERSION = '7.0.0'
+def VERSION = '11.0.0'
 uploadArchives {
     configuration = configurations.archives
     repositories {

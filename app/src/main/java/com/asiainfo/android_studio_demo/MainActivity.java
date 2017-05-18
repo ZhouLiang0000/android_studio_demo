@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Router.addRouteTable(new RouteTable() {
 //            @Override
 //            public void handle(Map<String, Class<?>> map) {
-//                map.put("test", SecondActivity.class);
+//                map.put("testSecond", SecondActivity.class);
 //            }
 //        });
     }
