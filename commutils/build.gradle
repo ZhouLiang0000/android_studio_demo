@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'com.chenenyu.router'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -30,7 +31,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 def ATRIFACTID = 'commutils-lib'
-def VERSION = '3.0.0'
+def VERSION = '7.0.0'
 uploadArchives {
     configuration = configurations.archives
     repositories {

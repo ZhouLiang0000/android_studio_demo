@@ -7,6 +7,12 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.chenenyu.router.RouteTable;
+import com.chenenyu.router.Router;
+import com.example.commutils.activity.SecondActivity;
+
+import java.util.Map;
+
 import static android.R.attr.onClick;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -23,10 +29,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         bt_anniu = (Button) findViewById(R.id.bt_anniu);
+        bt_anniu.setOnClickListener(this);
+//        Router.addRouteTable(new RouteTable() {
+//            @Override
+//            public void handle(Map<String, Class<?>> map) {
+//                map.put("test", SecondActivity.class);
+//            }
+//        });
     }
 
     @Override
     public void onClick(View view) {
-
+        switch (view.getId()){
+            case R.id.bt_anniu:
+                Router.build("testSecond").go(this);
+                break;
+        }
     }
 }

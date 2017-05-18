@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.chenenyu.router.Router;
+import com.chenenyu.router.annotation.Route;
 import com.example.commutils.R;
 
 /**
  * Created by zhouliang on 2017/5/9.
  */
-
+@Route("testSecond")
 public class SecondActivity extends Activity implements View.OnClickListener{
     private Button bt_anniu;
 
@@ -26,7 +28,11 @@ public class SecondActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.bt_anniu){
-            Toast.makeText(SecondActivity.this, "点击了按钮new_button", Toast.LENGTH_SHORT).show();
+//            Router.build("first").go(this);
+            Bundle b = new Bundle();
+            b.putString("tag1","this is frome SecondActivity");
+            Router.build("first").with("tag",b).go(this);
+//            Toast.makeText(SecondActivity.this, "点击了按钮new_button", Toast.LENGTH_SHORT).show();
         }
     }
 
