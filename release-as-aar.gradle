@@ -1,0 +1,20 @@
+uploadArchives() {
+    repositories {
+        mavenDeployer {
+            configuration = configurations.deployerJars
+            println 'repoType : ' + rootProject.ext.repoType
+            if ((rootProject.ext.repoType).equals("remote")) { //发布到远程仓库
+                snapshotRepository(url: snapshotRepositoryUrl) { // 测试包
+                    authentication(userName: repositoryUserName, password: repositoryPassword)
+                }
+                repository(url: releaseRepositoryUrl) { // 正式包
+                    authentication(userName: repositoryUserName, password: repositoryPassword)
+                }
+            } else { // 发布到本地仓库
+                repository(url: localRepositoryUrl) {
+                    authentication(userName: repositoryUserName, password: repositoryPassword)
+                }
+            }
+        }
+    }
+}
